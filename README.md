@@ -10,8 +10,8 @@ DeepExtremeCubes. We will work with PyTorch and xarray and decide jointly what g
 want to achieve during the week 🙂
 
 ## Recommended reading material
-- [https://openaccess.thecvf.com/content/CVPR2024/html/Benson_Multi-modal_Learning_for_Geospatial_Vegetation_Forecasting_CVPR_2024_paper.html](https://openaccess.thecvf.com/content/CVPR2024/html/Benson_Multi-modal_Learning_for_Geospatial_Vegetation_Forecasting_CVPR_2024_paper.html)
-- [https://www.nature.com/articles/s41597-025-04447-5](https://www.nature.com/articles/s41597-025-04447-5)
+- [Benson et al. 2024 -- Multi-modal Learning for Geospatial Vegetation Forecasting](https://openaccess.thecvf.com/content/CVPR2024/html/Benson_Multi-modal_Learning_for_Geospatial_Vegetation_Forecasting_CVPR_2024_paper.html)
+- [Ji et al. 2025 -- DeepExtremeCubes: Earth system spatio-temporal data for assessing compound heatwave and drought impacts](https://www.nature.com/articles/s41597-025-04447-5)
 
 ## Metadata Dataframe
 
