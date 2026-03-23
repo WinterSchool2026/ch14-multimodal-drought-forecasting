@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+nohup.out
+
+outputs/cache/
+outputs/checkpoints/
+outputs/logs/
+outputs/metrics/
+outputs/plots/
+outputs/figures/
+outputs/splits/
+*.npy
+*.npz
