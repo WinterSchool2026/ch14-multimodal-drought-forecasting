@@ -19,7 +19,7 @@ The experiment follows Benson et al.'s protocol:
 
 ## Data
 
-Source: DeepExtremes v1.3 zarr archives on S3 (anonymous access, no credentials needed).
+Source: DeepExtremes v1.3 zarr archives on S3 
 
 Each cached `.npz` file contains:
 
@@ -127,44 +127,3 @@ python run_experiment.py
 Runs steps 1-6 end-to-end, parallelizing training across 8 GPUs and evaluation across
 all 16 train/test combinations.
 
-## File overview
-
-| File                | Purpose                                        |
-|---------------------|------------------------------------------------|
-| `config.py`         | Hyperparameters, region definitions, paths      |
-| `data_select.py`    | Query S3 registry, filter regions, create splits|
-| `data_download.py`  | Download zarr from S3, preprocess, cache as npz |
-| `dataset.py`        | PyTorch Dataset for S2+ERA5+DEM input           |
-| `models.py`         | All model architectures + factory function      |
-| `metrics.py`        | Loss functions, per-leadtime eval, R^2, baselines|
-| `train.py`          | Training loop with early stopping               |
-| `evaluate.py`       | Cross-region evaluation pipeline                |
-| `analyze.py`        | Aggregate results into tables and plots         |
-| `run_experiment.py` | End-to-end orchestrator                         |
-| `extract_terramind.py` | TerraMind embedding extraction               |
-| `dataset_terramind.py` | Dataset variant for pre-extracted embeddings  |
-| `add_evi.py`        | Post-processing script to add EVI fields        |
-| `fix_cache.py`      | One-off fix for S2 normalization in cached data |
-| `plot_forecasts.py` | Visualize sample forecast maps                  |
-
-## Output structure
-
-```
-outputs/
-  splits/           region_split.json files
-  cache/
-    africa/         *.npz cached minicubes
-    latam/          *.npz cached minicubes
-  checkpoints/
-    africa_ConvLSTM/   model.pt, history.json
-    ...
-  metrics/
-    africa_on_latam_ConvLSTM.json
-    summary.csv
-    transfer_gap.csv
-  plots/
-    per_leadtime_rmse.pdf
-    vi_r2_bar.pdf
-    transfer_heatmap.pdf
-    outperformance.pdf
-```
